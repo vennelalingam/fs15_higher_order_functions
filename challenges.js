@@ -14,21 +14,21 @@
 
 // ----------  for loop --------*/
 
-    function forEach(arr, cb){
-      for(let i=0; i<arr.length; i++){
-        cb(arr[i]);
-      }
-    }
+    // function forEach(arr, cb){
+    //   for(let i=0; i<arr.length; i++){
+    //     cb(arr[i]);
+    //   }
+    // }
 
 //---------- for...of loop -------------------
 
-    function forEach(array, callback){
-        for(let value of array){
-            callback(value);
-        }
-    }
+//     function forEach(array, callback){
+//         for(let value of array){
+//             callback(value);
+//         }
+//     }
 
-forEach(["a", "b", "c"], e => {console.log(e)}); // a b c
+// forEach(["a", "b", "c"], e => {console.log(e)}); // a b c
 
 // /*-------------------------------------
 // 2)
@@ -49,24 +49,24 @@ forEach(["a", "b", "c"], e => {console.log(e)}); // a b c
 // ----------------------------------*/
 /* ------------ for...of loop ----------------------*/
 
-let newArray = [];
-function map(array, callback){
-    for(let value of array){
-        newArray.push(callback(value))
-    }
-    return newArray;
-}
+// let newArray = [];
+// function map(array, callback){
+//     for(let value of array){
+//         newArray.push(callback(value))
+//     }
+//     return newArray;
+// }
 
 /* ------------ for loop ----------------------*/
 // let newArray = [];
 
-function map(array, callback){
-    for (let i=0; i<array.length; i++){
-        newArray.push(callback(array[i]));
-    }
-    return newArray;
-}
-console.log(map([5, 6, 7], e => e * 2)); // [10, 12, 14]
+// function map(array, callback){
+//     for (let i=0; i<array.length; i++){
+//         newArray.push(callback(array[i]));
+//     }
+//     return newArray;
+// }
+// console.log(map([5, 6, 7], e => e * 2)); // [10, 12, 14]
 // /*------------------
 // 3)
 // Create a function named
@@ -87,32 +87,32 @@ console.log(map([5, 6, 7], e => e * 2)); // [10, 12, 14]
 
 //***** using for loop n switch case  *****/
 
-function filter(array, callback){
-       for (let i=0; i<array.length; i++){
-        let row = callback(array[i]);
-        switch (row) {
-            case true:
-                newArray.push(array[i])
-                break;    
-        }
-    }
-    return newArray;
-}
-console.log(filter([5, 6, 7, 8], e => e % 2 === 0 ? true : false)); // [6, 8]
+// function filter(array, callback){
+//        for (let i=0; i<array.length; i++){
+//         let row = callback(array[i]);
+//         switch (row) {
+//             case true:
+//                 newArray.push(array[i])
+//                 break;    
+//         }
+//     }
+//     return newArray;
+// }
+// console.log(filter([5, 6, 7, 8], e => e % 2 === 0 ? true : false)); // [6, 8]
 
 //***** using for...of loop n switch case  *****/
 
-function filter(array, callback){
-    for(let value of array){
-        let result = callback(value);
-        switch (result) {
-            case true:
-                newArray.push(value)
-                break;
-        }
-    }
-    return newArray;
-}
+// function filter(array, callback){
+//     for(let value of array){
+//         let result = callback(value);
+//         switch (result) {
+//             case true:
+//                 newArray.push(value)
+//                 break;
+//         }
+//     }
+//     return newArray;
+// }
 
 // console.log(filter([5, 6, 7, 8], e => e % 2 === 0 ? true : false)); // [6, 8]
 
@@ -149,32 +149,32 @@ function filter(array, callback){
 
     // --------- for loop ---------------*/
 
-function every(array, callback) {
+// function every(array, callback) {
 
- for (let i = 0; i < array.length; i++) {
-   const value = array[i];
-   if (!callback(value, i, array)) {
-     return false;
-   }
- }
- return true;
-}
+//  for (let i = 0; i < array.length; i++) {
+//    const value = array[i];
+//    if (!callback(value, i, array)) {
+//      return false;
+//    }
+//  }
+//  return true;
+// }
 
 // --------for...of ----------*/
 
-function every(array, callback, i){
-    for(let value of array){
-        let result = value;
-        if(!callback(result, i, array)){
-            return false;
-        }
-    }
-    return true;
-}
+// function every(array, callback, i){
+//     for(let value of array){
+//         let result = value;
+//         if(!callback(result, i, array)){
+//             return false;
+//         }
+//     }
+//     return true;
+// }
 
- console.log(every([1, 3, 5], n => n < 6)); // true
- console.log(every([2, 4, 6], n => n < 6)); // false
- console.log(every([2, 4, 6, 2], n => n < 6)); // false
+//  console.log(every([1, 3, 5], n => n < 6)); // true
+//  console.log(every([2, 4, 6], n => n < 6)); // false
+//  console.log(every([2, 4, 6, 2], n => n < 6)); // false
 // /*------------------
 // 5)
 // You've written "forEach", "map", "filter"
@@ -187,7 +187,15 @@ function every(array, callback, i){
 // in the nums array. Use a fat arrow function.
 // The code has been started for you.
 // ------------------*/
+const nums = [1, 2, 3, 4, 5, 6, 7, 8];
+let sum = 0;
 
+nums.forEach((e) => { 
+  // your code here
+  sum += e
+});
+
+console.log(sum);
 
 
 // /*------------------
@@ -199,6 +207,11 @@ function every(array, callback, i){
 // ["Sofia", "Pedro", "Mia"] to ["Hello, Sofia!", "Hello, Pedro!", "Hello, Mia!"]
 // ------------------*/
 
+const names = ["Sofia", "Pedro", "Mia"];
+
+const greetings = names.map(e => `Hello, ${e}`)
+
+console.log(greetings);
 
 
 // /*------------------
@@ -210,6 +223,11 @@ function every(array, callback, i){
 // ["JavaScript", "Python", "Go"] to ["JavaScript", "Python", "Go"]
 // ------------------*/
 
+const langs = ["JavaScript", "Python", "Go"];
+
+const duplicate = langs.map(e => e)
+
+console.log(duplicate);
 
 
 // /*------------------
@@ -220,6 +238,16 @@ function every(array, callback, i){
 // Result should be ["Grace Hopper", "Ruth Bader Ginsburg", "Ada Lovelace"]
 // ------------------*/
 
+const people = [
+  { firstname: "Grace", lastname: "Hopper" },
+  { firstname: "Ruth", lastname: "Bader Ginsburg" },
+  { firstname: "Ada", lastname: "Lovelace" },
+];
+console.log(people[0]["firstname"]);
+
+const fullnames = people.map(e => e.firstname + " " + e.lastname);
+
+console.log(fullnames);
 
 
 // /*------------------
