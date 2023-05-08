@@ -11,10 +11,26 @@
 
 // Test cases:
 // forEach(["a", "b", "c"], e => {console.log(e)}); // a b c
-// ------------------*/
 
+// ----------  for loop --------*/
 
-// /*------------------
+    function forEach(arr, cb){
+      for(let i=0; i<arr.length; i++){
+        cb(arr[i]);
+      }
+    }
+
+//---------- for...of loop -------------------
+
+    function forEach(array, callback){
+        for(let value of array){
+            callback(value);
+        }
+    }
+
+forEach(["a", "b", "c"], e => {console.log(e)}); // a b c
+
+// /*-------------------------------------
 // 2)
 // Create a function named
 // "map" that takes in two
@@ -30,9 +46,27 @@
 
 // Test cases:
 // console.log(map([5, 6, 7], e => e * 2)); // [10, 12, 14]
-// ------------------*/
+// ----------------------------------*/
+/* ------------ for...of loop ----------------------*/
 
+let newArray = [];
+function map(array, callback){
+    for(let value of array){
+        newArray.push(callback(value))
+    }
+    return newArray;
+}
 
+/* ------------ for loop ----------------------*/
+// let newArray = [];
+
+function map(array, callback){
+    for (let i=0; i<array.length; i++){
+        newArray.push(callback(array[i]));
+    }
+    return newArray;
+}
+console.log(map([5, 6, 7], e => e * 2)); // [10, 12, 14]
 // /*------------------
 // 3)
 // Create a function named
@@ -49,8 +83,49 @@
 // Test cases:
 // console.log(filter([5, 6, 7, 8], e => e % 2 === 0 ? true : false)); // [6, 8]
 // ------------------*/
+// let newArray = [];
 
+//***** using for loop n switch case  *****/
 
+function filter(array, callback){
+       for (let i=0; i<array.length; i++){
+        let row = callback(array[i]);
+        switch (row) {
+            case true:
+                newArray.push(array[i])
+                break;    
+        }
+    }
+    return newArray;
+}
+console.log(filter([5, 6, 7, 8], e => e % 2 === 0 ? true : false)); // [6, 8]
+
+//***** using for...of loop n switch case  *****/
+
+function filter(array, callback){
+    for(let value of array){
+        let result = callback(value);
+        switch (result) {
+            case true:
+                newArray.push(value)
+                break;
+        }
+    }
+    return newArray;
+}
+
+// console.log(filter([5, 6, 7, 8], e => e % 2 === 0 ? true : false)); // [6, 8]
+
+//***** could not figure out the correct syntax using ternary ***/
+
+// function filter(array, callback){
+//        for (let i=0; i<array.length; i++){
+//         newArray.push(callback(array[i])=== true ? array[i] : null);
+//     }
+//     return newArray;
+// }
+
+//  console.log(filter([5, 6, 7, 8], e => e % 2 === 0 ? true : false)); // [6, 8]
 
 // /*------------------
 // 4)
@@ -72,7 +147,34 @@
 // console.log(every([2, 4, 6, 2], n => n < 6)); // false
 // ------------------*/
 
+    // --------- for loop ---------------*/
 
+function every(array, callback) {
+
+ for (let i = 0; i < array.length; i++) {
+   const value = array[i];
+   if (!callback(value, i, array)) {
+     return false;
+   }
+ }
+ return true;
+}
+
+// --------for...of ----------*/
+
+function every(array, callback, i){
+    for(let value of array){
+        let result = value;
+        if(!callback(result, i, array)){
+            return false;
+        }
+    }
+    return true;
+}
+
+ console.log(every([1, 3, 5], n => n < 6)); // true
+ console.log(every([2, 4, 6], n => n < 6)); // false
+ console.log(every([2, 4, 6, 2], n => n < 6)); // false
 // /*------------------
 // 5)
 // You've written "forEach", "map", "filter"
