@@ -403,15 +403,15 @@
 //   { firstname: "Ada", lastname: "Lovelace" },
 // ]
 // ------------------*/
-const people = [
-  { firstname: "Grace", lastname: "Hopper" },
-  { firstname: "Ruth", lastname: "Bader Ginsburg" },
-  { firstname: "Ada", lastname: "Lovelace" },
-];
+// const people = [
+//   { firstname: "Grace", lastname: "Hopper" },
+//   { firstname: "Ruth", lastname: "Bader Ginsburg" },
+//   { firstname: "Ada", lastname: "Lovelace" },
+// ];
 
-const peopleWithA = people.filter( e => e.firstname.toLowerCase().includes("a"))
+// const peopleWithA = people.filter( e => e.firstname.toLowerCase().includes("a"))
 
-console.log(peopleWithA);
+// console.log(peopleWithA);
 
 // /*------------------
 // 8)
@@ -433,23 +433,23 @@ console.log(peopleWithA);
 // ["kayak", "reviver", "racecar", "reader", "madam"] is false
 // ------------------*/
 
-const wordList1 = ["deified", "civic", "radar", "level", "rotor"];
-const wordList2 = ["kayak", "reviver", "racecar", "reader", "madam"];
+// const wordList1 = ["deified", "civic", "radar", "level", "rotor"];
+// const wordList2 = ["kayak", "reviver", "racecar", "reader", "madam"];
 
-function checkPalindromes(list) {
-  let reverse = wordList1.reverse();
-  console.log(reverse);
-  let reverse1 = wordList2.reverse();
-  console.log(reverse1);
-  return list.every((list) => reverse 
-    // add necessary parameters in above
-    // and finish the code in the body here
+// function checkPalindromes(list) {
+//   let reverse = wordList1.reverse();
+//   console.log(reverse);
+//   let reverse1 = wordList2.reverse();
+//   console.log(reverse1);
+//   return list.every((list) => reverse 
+//     // add necessary parameters in above
+//     // and finish the code in the body here
     
-  );
-}
+//   );
+// }
 
-console.log(checkPalindromes(wordList1));
-console.log(checkPalindromes(wordList2));
+// console.log(checkPalindromes(wordList1));
+// console.log(checkPalindromes(wordList2));
 
 // /*------------------
 // 9)
@@ -459,9 +459,9 @@ console.log(checkPalindromes(wordList2));
 // numsList (from the previous question) together.
 // ------------------*/
 
-const numsList = [1, 34, 83, 65, 3, 24, 98];
-const total = numsList.reduce((acc, b) =>  acc + b
-);
+// const numsList = [1, 34, 83, 65, 3, 24, 98];
+// const total = numsList.reduce((acc, b) =>  acc + b
+// );
 
 // console.log(total); // should equal 308
 
@@ -478,13 +478,13 @@ const total = numsList.reduce((acc, b) =>  acc + b
 // [1, 34, 83, 65, 3, 24, 98] to [65,98]
 // ------------------*/
 
-listArray = [1, 34, 83, 65, 3, 24, 98]
+// listArray = [1, 34, 83, 65, 3, 24, 98]
 
-const oddList = listArray.filter((e, i) => 
+// const oddList = listArray.filter((e, i) => 
 
-(e % 2 === 0 && i % 2 === 0) || (e % 2 !== 0 && i % 2 !== 0))
+// (e % 2 === 0 && i % 2 === 0) || (e % 2 !== 0 && i % 2 !== 0))
 
-console.log(oddList);
+// console.log(oddList);
 
 // /*------------------
 // 11.1)
@@ -503,21 +503,21 @@ const team = [
 // to [[20, 31, 16, 21, 21], [17, 31, 16, 21, 21]]
 // ------------------*/
 
-let newArray = []
-console.log(newArray)
-let olderTeams = team.filter(e => {
-  for(let i = 0; i< team.length; i++){
-    let row = (team[i]);
-    if(row.entries(e > 20) === 3 ){
-      newArray.push(row)
-    } else null
-    // if(row)
-    // for (let j=0; j<team[i].length; j++){
-    //   console.log(team[i][j])
-    // }
-  }
-}
-)
+// let newArray = []
+// console.log(newArray)
+// let olderTeams = team.filter(e => {
+//   for(let i = 0; i< team.length; i++){
+//     let row = (team[i]);
+//     if(row.entries(e > 20) === 3 ){
+//       newArray.push(row)
+//     } else null
+//     // if(row)
+//     // for (let j=0; j<team[i].length; j++){
+//     //   console.log(team[i][j])
+//     // }
+//   }
+// }
+// )
 
 // console.log(olderTeams);
 
@@ -528,11 +528,29 @@ let olderTeams = team.filter(e => {
 
 // ------------------*/
 
-// // olderTeams = // your code here
+const teams = [
+  [20, 31, 19, 18, 22],
+  [20, 31, 16, 21, 21],
+  [17, 31, 16, 21, 21],
+  [18, 19, 19, 20, 32]
+] 
 
-// // console.log(olderTeams);
+//------- class solution - 1 --------
+// olderTeams = teams.filter(team => {
+//   let count = 0;
+//   team.forEach((player) => player > 20 && ++count);
+//   return count < 3 ? false : true;
+// });
+// console.log(olderTeams);
 
+//-------- alternate sol ------------
+olderTeams = teams.filter(team => 
+  team.reduce((count, player) => (player > 20 ? ++count : count), 0) >= 3
+);
+ console.log(olderTeams);
 // /*------------------
+
+
 // 11.3) This time, instead of returning the arrays of teams,
 // calculate the total age of the team (adding all the ages of its players).
 // In other words, create an array that contains the accumulated age of team players,
@@ -543,20 +561,33 @@ let olderTeams = team.filter(e => {
 // [[20,31,19,18,22],[20,31,16,21,21],[17,31,16,21,21],[18,19,19,20,32]] 
 // to [109,106]
 
-// ------------------*/
+// -----------  class - sol -------*/
 
-// // olderTeams = // your code here
+olderTeams = teams
+  .filter((team) => {
+    return team.filter((player) => player > 20).length > 2;
+  })
+  .map((arr) => {
+    return arr.reduce((a, b) => a + b);
+  });
+console.log(olderTeams);
+//------------------------------------------------
+// let array = [[20, 31, 16, 21, 21], [17, 31, 16, 21, 21]]
 
-// // console.log(olderTeams);
-
-let array = [[20, 31, 16, 21, 21], [17, 31, 16, 21, 21]]
-
-console.log(newArray);
-  let newAray = [];
-  for(let i = 0; i<array.length; i++){
-    array[i]
+// console.log(newAray);
+//   let newAray = [];
+//   for(let i = 0; i<array.length; i++){
+//     array[i]
   
-let result = array[i].reduce((acc, b) => acc + b);
-    newAray.push(result);
-  }
-  console.log(newAray);
+// let result = array[i].reduce((acc, b) => acc + b);
+//     newAray.push(result);
+//   }
+//   console.log(newAray);
+//--------------------------------------------------
+olderTeams = teams
+  .filter((team) => 
+    team.reduce((count, player) => (player > 20 ? ++count : count), 0) >= 3
+  )
+  .map((team) => team.reduce((a, b) => a + b, 0));
+
+console.log(olderTeams);
