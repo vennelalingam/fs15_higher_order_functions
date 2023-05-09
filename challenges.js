@@ -433,19 +433,23 @@ console.log(peopleWithA);
 // ["kayak", "reviver", "racecar", "reader", "madam"] is false
 // ------------------*/
 
-// const wordList1 = ["deified", "civic", "radar", "level", "rotor"];
-// const wordList2 = ["kayak", "reviver", "racecar", "reader", "madam"];
+const wordList1 = ["deified", "civic", "radar", "level", "rotor"];
+const wordList2 = ["kayak", "reviver", "racecar", "reader", "madam"];
 
-// function checkPalindromes(list) {
-//   return list.every((list) => {
-//     // add necessary parameters in above
-//     // and finish the code in the body here
+function checkPalindromes(list) {
+  let reverse = wordList1.reverse();
+  console.log(reverse);
+  let reverse1 = wordList2.reverse();
+  console.log(reverse1);
+  return list.every((list) => reverse 
+    // add necessary parameters in above
+    // and finish the code in the body here
     
-//   });
-// }
+  );
+}
 
-// console.log(checkPalindromes(wordList1));
-// console.log(checkPalindromes(wordList2));
+console.log(checkPalindromes(wordList1));
+console.log(checkPalindromes(wordList2));
 
 // /*------------------
 // 9)
@@ -455,9 +459,9 @@ console.log(peopleWithA);
 // numsList (from the previous question) together.
 // ------------------*/
 
-// const numsList = [1, 34, 83, 65, 3, 24, 98];
-// const total = numsList.reduce((acc, b) =>  acc + b
-// );
+const numsList = [1, 34, 83, 65, 3, 24, 98];
+const total = numsList.reduce((acc, b) =>  acc + b
+);
 
 // console.log(total); // should equal 308
 
