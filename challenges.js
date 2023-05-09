@@ -58,6 +58,7 @@
 // }
 
 /* ------------ for loop ----------------------*/
+
 // let newArray = [];
 
 // function map(array, callback){
@@ -67,6 +68,7 @@
 //     return newArray;
 // }
 // console.log(map([5, 6, 7], e => e * 2)); // [10, 12, 14]
+
 // /*------------------
 // 3)
 // Create a function named
@@ -160,7 +162,33 @@
 //  return true;
 // }
 
-// --------for...of ----------*/
+//*-----------
+
+  // function every(array, cb){
+  //   for (let i = 0; i < array.length; i++){
+  //     if(cb(array[i]) === false){
+  //       return false;
+  //     }
+  //   }
+  //   return true;
+  // }
+  
+//  console.log(every([1, 3, 5], n => n < 6)); // true
+//  console.log(every([2, 4, 6], n => n < 6)); // false
+
+  /************ some method *****************/
+//  function some(array, cb){
+//     for (let i = 0; i < array.length; i++){
+//       if(cb(array[i]) === true){
+//         return true;
+//       }
+//     }
+//     return false;
+//   }
+
+
+/******************************************/
+// --------for...of every----------*/
 
 // function every(array, callback, i){
 //     for(let value of array){
@@ -187,16 +215,16 @@
 // in the nums array. Use a fat arrow function.
 // The code has been started for you.
 // ------------------*/
+
 // const nums = [1, 2, 3, 4, 5, 6, 7, 8];
 // let sum = 0;
 
 // nums.forEach((e) => { 
 //   // your code here
-//   sum += e
+//   sum += e;
 // });
 
 // console.log(sum);
-
 
 // /*------------------
 // 6.1)
@@ -238,7 +266,7 @@
 // Result should be ["Grace Hopper", "Ruth Bader Ginsburg", "Ada Lovelace"]
 // ------------------*/
 
-// const people = [
+// const people1 = [
 //   { firstname: "Grace", lastname: "Hopper" },
 //   { firstname: "Ruth", lastname: "Bader Ginsburg" },
 //   { firstname: "Ada", lastname: "Lovelace" },
@@ -246,6 +274,11 @@
 // console.log(people[0]["firstname"]);
 
 // const fullnames = people.map(e => e.firstname + " " + e.lastname);
+
+//or object destructuring syntax
+// const fullnames = people1.map(
+//   ({firstname, lastname}) => `${firstname} ${lastname}`
+// )
 
 // console.log(fullnames);
 
@@ -266,16 +299,16 @@
 //   { firstname: "Ada", lastname: "Lovelace", fullname: "Ada Lovelace" },
 // ]
 // ------------------*/
-const people = [
-  { firstname: "Grace", lastname: "Hopper" },
-  { firstname: "Ruth", lastname: "Bader Ginsburg" },
-  { firstname: "Ada", lastname: "Lovelace" },
-];
+// const people = [
+//   { firstname: "Grace", lastname: "Hopper" },
+//   { firstname: "Ruth", lastname: "Bader Ginsburg" },
+//   { firstname: "Ada", lastname: "Lovelace" },
+// ];
 
-const fullobjects = people.map(e => ({...e, 
-  fullname: e.firstname +" "+ e.lastname}) )
+// const fullobjects = people.map(e => ({...e, 
+//   fullname: e.firstname +" "+ e.lastname}) )
 
-console.log(fullobjects);
+// console.log(fullobjects);
 
 // /*------------------
 // 6.5)
@@ -287,11 +320,11 @@ console.log(fullobjects);
 
 // ------------------*/
 
-const numbers = [3, 7, 24, 1, 66, 89, 88, 23, 54, 54, 12, 9];
+// const numbers = [3, 7, 24, 1, 66, 89, 88, 23, 54, 54, 12, 9];
 
-const areEven = numbers.map(e => e % 2 === 0);
+// const areEven = numbers.map(e => e % 2 === 0);
 
-console.log(areEven);
+// console.log(areEven);
 
 // /*------------------
 // 6.6)
@@ -303,11 +336,11 @@ console.log(areEven);
 
 // ------------------*/
 
-const moreNumbers = [1, 3, 2, 2, 4, 13, 8, 6, 8, 10, 4, 12, 12];
+// const moreNumbers = [1, 3, 2, 2, 4, 13, 8, 6, 8, 10, 4, 12, 12];
 
-const areInPosition = moreNumbers.map((e, i) => e === i) 
+// const areInPosition = moreNumbers.map((e, i) => e === i) 
 
-console.log(areInPosition);
+// console.log(areInPosition);
 
 // /*------------------
 // 7.1)
@@ -318,11 +351,11 @@ console.log(areInPosition);
 // [1, 34, 83, 65, 3, 24, 98] to [1, 34, 3, 24]
 // ------------------*/
 
-const numsList = [1, 34, 83, 65, 3, 24, 98];
+// const numsList = [1, 34, 83, 65, 3, 24, 98];
 
-const smallNums = numsList.filter( e => e > 50)
+// const smallNums = numsList.filter( e => e > 50)
 
-console.log(smallNums);
+// console.log(smallNums);
 
 // /*------------------
 // 7.2)
@@ -332,11 +365,11 @@ console.log(smallNums);
 // Test case:
 // [1, 34, 83, 65, 3, 24, 98] to [1, 83, 65, 3]
 // ------------------*/
-const numsEvenList = [1, 34, 83, 65, 3, 24, 98];
+// const numsEvenList = [1, 34, 83, 65, 3, 24, 98];
 
-const evenList = numsEvenList.filter(e => e % 2 === 1)
+// const evenList = numsEvenList.filter(e => e % 2 === 1)
 
-console.log(evenList);
+// console.log(evenList);
 
 // /*------------------
 // 7.3)
@@ -347,11 +380,11 @@ console.log(evenList);
 // [1, 0, 1, 3, 5, 6, 6, 1, 9] to [1, 5, 6, 9]
 // ------------------*/
 
-const moreNums = [1, 0, 1, 3, 5, 6, 6, 1, 9];
+// const moreNums = [1, 0, 1, 3, 5, 6, 6, 1, 9];
 
-const evenList1 = moreNums.filter((e, i) => e > i)
+// const evenList1 = moreNums.filter((e, i) => e > i)
 
-console.log(evenList1);
+// console.log(evenList1);
 
 // /*------------------
 // 7.4)
@@ -370,15 +403,15 @@ console.log(evenList1);
 //   { firstname: "Ada", lastname: "Lovelace" },
 // ]
 // ------------------*/
-// const people = [
-//   { firstname: "Grace", lastname: "Hopper" },
-//   { firstname: "Ruth", lastname: "Bader Ginsburg" },
-//   { firstname: "Ada", lastname: "Lovelace" },
-// ];
+const people = [
+  { firstname: "Grace", lastname: "Hopper" },
+  { firstname: "Ruth", lastname: "Bader Ginsburg" },
+  { firstname: "Ada", lastname: "Lovelace" },
+];
 
-// // const peopleWithA = // your code here
+const peopleWithA = people.filter( e => e.firstname.toLowerCase().includes("a"))
 
-// // console.log(peopleWithA);
+console.log(peopleWithA);
 
 // /*------------------
 // 8)
@@ -404,14 +437,15 @@ console.log(evenList1);
 // const wordList2 = ["kayak", "reviver", "racecar", "reader", "madam"];
 
 // function checkPalindromes(list) {
-//   return list.every(() => {
+//   return list.every((list) => {
 //     // add necessary parameters in above
 //     // and finish the code in the body here
+    
 //   });
 // }
 
-// // console.log(checkPalindromes(wordList1));
-// // console.log(checkPalindromes(wordList2));
+// console.log(checkPalindromes(wordList1));
+// console.log(checkPalindromes(wordList2));
 
 // /*------------------
 // 9)
@@ -421,12 +455,11 @@ console.log(evenList1);
 // numsList (from the previous question) together.
 // ------------------*/
 
-// const total = numsList.reduce(() => {
-//   // add necessary parameters in above
-//   // and finish the code in the body here
-// });
+// const numsList = [1, 34, 83, 65, 3, 24, 98];
+// const total = numsList.reduce((acc, b) =>  acc + b
+// );
 
-// // console.log(total); // should equal 308
+// console.log(total); // should equal 308
 
 // // TO DEEPEN THE LEARNING
 
@@ -441,24 +474,48 @@ console.log(evenList1);
 // [1, 34, 83, 65, 3, 24, 98] to [65,98]
 // ------------------*/
 
-// // const oddList = // your code here
+listArray = [1, 34, 83, 65, 3, 24, 98]
 
-// // console.log(oddList);
+const oddList = listArray.filter((e, i) => 
+
+(e % 2 === 0 && i % 2 === 0) || (e % 2 !== 0 && i % 2 !== 0))
+
+console.log(oddList);
 
 // /*------------------
 // 11.1)
-// Each array in this array represents the each player's age in a basketball team
-// Filter out those teams that have less than 3 players that are older than 20 years old.
+// Each array in this array represents the each player's age
+// in a basketball team. Filter out those teams that have less 
+// than 3 players that are older than 20 years old.
 // Hint: you can use HOFs inside the callbacks of other HOFs.
 
 // Test case:
-// [[20,31,19,18,22],[20,31,16,21,21],[17,31,16,21,21],[18,19,19,20,32]] 
+const team = [
+  [20, 31, 19, 18, 22],
+  [20, 31, 16, 21, 21],
+  [17, 31, 16, 21, 21],
+  [18, 19, 19, 20, 32]
+] 
 // to [[20, 31, 16, 21, 21], [17, 31, 16, 21, 21]]
 // ------------------*/
 
-// // let olderTeams = // your code here
+let newArray = []
+console.log(newArray)
+let olderTeams = team.filter(e => {
+  for(let i = 0; i< team.length; i++){
+    let row = (team[i]);
+    if(row.entries(e > 20) === 3 ){
+      newArray.push(row)
+    } else null
+    // if(row)
+    // for (let j=0; j<team[i].length; j++){
+    //   console.log(team[i][j])
+    // }
+  }
+}
+)
 
-// // console.log(olderTeams);
+// console.log(olderTeams);
 
 // /*------------------
 // 11.2) Perhaps you used the .length property in the previous exercise.
@@ -488,5 +545,14 @@ console.log(evenList1);
 
 // // console.log(olderTeams);
 
+let array = [[20, 31, 16, 21, 21], [17, 31, 16, 21, 21]]
 
-
+console.log(newArray);
+  let newAray = [];
+  for(let i = 0; i<array.length; i++){
+    array[i]
+  
+let result = array[i].reduce((acc, b) => acc + b);
+    newAray.push(result);
+  }
+  console.log(newAray);
