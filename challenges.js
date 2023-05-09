@@ -187,15 +187,15 @@
 // in the nums array. Use a fat arrow function.
 // The code has been started for you.
 // ------------------*/
-const nums = [1, 2, 3, 4, 5, 6, 7, 8];
-let sum = 0;
+// const nums = [1, 2, 3, 4, 5, 6, 7, 8];
+// let sum = 0;
 
-nums.forEach((e) => { 
-  // your code here
-  sum += e
-});
+// nums.forEach((e) => { 
+//   // your code here
+//   sum += e
+// });
 
-console.log(sum);
+// console.log(sum);
 
 
 // /*------------------
@@ -207,11 +207,11 @@ console.log(sum);
 // ["Sofia", "Pedro", "Mia"] to ["Hello, Sofia!", "Hello, Pedro!", "Hello, Mia!"]
 // ------------------*/
 
-const names = ["Sofia", "Pedro", "Mia"];
+// const names = ["Sofia", "Pedro", "Mia"];
 
-const greetings = names.map(e => `Hello, ${e}`)
+// const greetings = names.map(e => `Hello, ${e}`)
 
-console.log(greetings);
+// console.log(greetings);
 
 
 // /*------------------
@@ -223,11 +223,11 @@ console.log(greetings);
 // ["JavaScript", "Python", "Go"] to ["JavaScript", "Python", "Go"]
 // ------------------*/
 
-const langs = ["JavaScript", "Python", "Go"];
+// const langs = ["JavaScript", "Python", "Go"];
 
-const duplicate = langs.map(e => e)
+// const duplicate = langs.map(e => e)
 
-console.log(duplicate);
+// console.log(duplicate);
 
 
 // /*------------------
@@ -238,16 +238,16 @@ console.log(duplicate);
 // Result should be ["Grace Hopper", "Ruth Bader Ginsburg", "Ada Lovelace"]
 // ------------------*/
 
-const people = [
-  { firstname: "Grace", lastname: "Hopper" },
-  { firstname: "Ruth", lastname: "Bader Ginsburg" },
-  { firstname: "Ada", lastname: "Lovelace" },
-];
-console.log(people[0]["firstname"]);
+// const people = [
+//   { firstname: "Grace", lastname: "Hopper" },
+//   { firstname: "Ruth", lastname: "Bader Ginsburg" },
+//   { firstname: "Ada", lastname: "Lovelace" },
+// ];
+// console.log(people[0]["firstname"]);
 
-const fullnames = people.map(e => e.firstname + " " + e.lastname);
+// const fullnames = people.map(e => e.firstname + " " + e.lastname);
 
-console.log(fullnames);
+// console.log(fullnames);
 
 
 // /*------------------
@@ -266,10 +266,16 @@ console.log(fullnames);
 //   { firstname: "Ada", lastname: "Lovelace", fullname: "Ada Lovelace" },
 // ]
 // ------------------*/
+const people = [
+  { firstname: "Grace", lastname: "Hopper" },
+  { firstname: "Ruth", lastname: "Bader Ginsburg" },
+  { firstname: "Ada", lastname: "Lovelace" },
+];
 
-// // const fullobjects = // your code here
+const fullobjects = people.map(e => ({...e, 
+  fullname: e.firstname +" "+ e.lastname}) )
 
-// // console.log(fullobjects);
+console.log(fullobjects);
 
 // /*------------------
 // 6.5)
@@ -281,11 +287,11 @@ console.log(fullnames);
 
 // ------------------*/
 
-// const numbers = [3, 7, 24, 1, 66, 89, 88, 23, 54, 54, 12, 9];
+const numbers = [3, 7, 24, 1, 66, 89, 88, 23, 54, 54, 12, 9];
 
-// // const areEven = // your code here
+const areEven = numbers.map(e => e % 2 === 0);
 
-// // console.log(areEven);
+console.log(areEven);
 
 // /*------------------
 // 6.6)
@@ -297,11 +303,11 @@ console.log(fullnames);
 
 // ------------------*/
 
-// const moreNumbers = [1, 3, 2, 2, 4, 13, 8, 6, 8, 10, 4, 12, 12];
+const moreNumbers = [1, 3, 2, 2, 4, 13, 8, 6, 8, 10, 4, 12, 12];
 
-// // const areInPosition = // your code here
+const areInPosition = moreNumbers.map((e, i) => e === i) 
 
-// // console.log(areInPosition);
+console.log(areInPosition);
 
 // /*------------------
 // 7.1)
@@ -312,11 +318,11 @@ console.log(fullnames);
 // [1, 34, 83, 65, 3, 24, 98] to [1, 34, 3, 24]
 // ------------------*/
 
-// const numsList = [1, 34, 83, 65, 3, 24, 98];
+const numsList = [1, 34, 83, 65, 3, 24, 98];
 
-// // const smallNums = // your code here
+const smallNums = numsList.filter( e => e > 50)
 
-// // console.log(smallNums);
+console.log(smallNums);
 
 // /*------------------
 // 7.2)
@@ -326,10 +332,11 @@ console.log(fullnames);
 // Test case:
 // [1, 34, 83, 65, 3, 24, 98] to [1, 83, 65, 3]
 // ------------------*/
+const numsEvenList = [1, 34, 83, 65, 3, 24, 98];
 
-// // const evenList = // your code here
+const evenList = numsEvenList.filter(e => e % 2 === 1)
 
-// // console.log(evenList);
+console.log(evenList);
 
 // /*------------------
 // 7.3)
@@ -340,11 +347,11 @@ console.log(fullnames);
 // [1, 0, 1, 3, 5, 6, 6, 1, 9] to [1, 5, 6, 9]
 // ------------------*/
 
-// const moreNums = [1, 0, 1, 3, 5, 6, 6, 1, 9];
+const moreNums = [1, 0, 1, 3, 5, 6, 6, 1, 9];
 
-// // const evenList = // your code here
+const evenList1 = moreNums.filter((e, i) => e > i)
 
-// // console.log(evenList);
+console.log(evenList1);
 
 // /*------------------
 // 7.4)
@@ -363,6 +370,11 @@ console.log(fullnames);
 //   { firstname: "Ada", lastname: "Lovelace" },
 // ]
 // ------------------*/
+// const people = [
+//   { firstname: "Grace", lastname: "Hopper" },
+//   { firstname: "Ruth", lastname: "Bader Ginsburg" },
+//   { firstname: "Ada", lastname: "Lovelace" },
+// ];
 
 // // const peopleWithA = // your code here
 
