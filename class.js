@@ -16,6 +16,12 @@
 
   Here, created a map function from scratch
   and called that func with two parameters
+  1. Create an empty array to store the new
+  results.
+  2. Loop through the array.
+  3. Apply the function to every element.
+  4. Push those new elements into the new array.
+  5. Return the new array.
   
 ---*/
   
